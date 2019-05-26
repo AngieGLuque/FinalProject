@@ -6,7 +6,7 @@ public class EstudianteClass {
     private final String nombre;
     private final String apellido;
     private final String carrera;
-    private final String id;
+    private final int id;
     private final String email;
     private final String contrasena;
     private static EstudianteClass estudiante;
@@ -16,12 +16,12 @@ public class EstudianteClass {
         this.nombre = "";
         this.apellido = "";
         this.carrera = "";
-        this.id = "";
+        this.id = 0;
         this.email = "";
         this.contrasena = "";
     }
 
-    EstudianteClass(String nombre, String apellido, String carrera,String id, String email, String contrasena){
+    EstudianteClass(String nombre, String apellido, String carrera,int id, String email, String contrasena){
         this.nombre = nombre;
         this.apellido = apellido;
         this.carrera = carrera;
@@ -45,7 +45,7 @@ public class EstudianteClass {
         return email;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
