@@ -12,6 +12,11 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class AddUserActivity extends AppCompatActivity {
     Switch carreraDependencia;
@@ -34,6 +39,7 @@ public class AddUserActivity extends AppCompatActivity {
                 startActivity(open);
             }
         });
+
     }
     private void check(){
         if(carreraDependencia.isChecked()){
