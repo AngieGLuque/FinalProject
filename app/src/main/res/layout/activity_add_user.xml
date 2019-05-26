@@ -7,7 +7,7 @@
     tools:context=".AddUserActivity">
 
     <ImageButton
-        android:id="@+id/check"
+        android:id="@+id/continue"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginStart="8dp"
@@ -37,10 +37,10 @@
         android:background="@drawable/sinfondo"
         android:contentDescription="@string/denied"
         android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="@+id/check"
-        app:layout_constraintEnd_toStartOf="@+id/check"
+        app:layout_constraintBottom_toBottomOf="@+id/continue"
+        app:layout_constraintEnd_toStartOf="@+id/continue"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/check"
+        app:layout_constraintTop_toTopOf="@+id/continue"
         app:srcCompat="@drawable/redx" />
 
     <EditText
