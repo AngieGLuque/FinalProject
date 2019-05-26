@@ -14,4 +14,5 @@
     <string name="estudiante">Estudiante</string>
     <string name="bibliotecario">Bibliotecario</string>
     <string name="cancel">cancel</string>
+    <string name="id">ID</string>
 </resources>
