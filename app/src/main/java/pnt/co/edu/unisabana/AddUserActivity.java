@@ -40,12 +40,7 @@ public class AddUserActivity extends AppCompatActivity {
             }
         });
 
-        Retrofit.Builder builder = new Retrofit.Builder()
-                .baseUrl("https://api.github.com")
-                .addConverterFactory(GsonConverterFactory.create());
-
-        Retrofit retrofit = builder.build();
-        GitHubClient client = retrofit.create(GitHubClient.class);
+        GitHubClient client = ServiceGenerator.createService();
 
     }
     private void check(){
