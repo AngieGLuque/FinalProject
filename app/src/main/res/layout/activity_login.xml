@@ -60,7 +60,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.317" />
+        app:layout_constraintVertical_bias="0.317"
+        android:importantForAutofill="no" tools:targetApi="o" />
 
     <EditText
         android:id="@+id/passwordLogin"
@@ -79,6 +80,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/correoLogin"
-        app:layout_constraintVertical_bias="0.17" />
+        app:layout_constraintVertical_bias="0.17"
+        android:importantForAutofill="no" tools:targetApi="o"/>
 
 </android.support.constraint.ConstraintLayout>
