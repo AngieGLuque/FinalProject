@@ -34,7 +34,7 @@ public class AddUserActivity extends AppCompatActivity {
         if(carreraDependencia.isChecked()){
             carreraDependencia.setText("Bibliotecario");
         }else{
-            carreraDependencia.setText("Estudiante");
+            carreraDependencia.setText("EstudianteClass");
         }
     }
 }
