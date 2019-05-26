@@ -10,7 +10,7 @@ public class EstudianteClass {
     private final String email;
     private final String contrasena;
     private static EstudianteClass estudiante;
-    public static ArrayList<EstudianteClass> estudiantesArrayList = new ArrayList<>();
+    public static ArrayList<EstudianteClass> estudiantes = new ArrayList<>();
 
     private EstudianteClass(){
         this.nombre = "";

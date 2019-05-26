@@ -11,7 +11,7 @@ public class BibliotecarioClass {
     //Falta ID
 
     private static BibliotecarioClass bibliotecario;
-    public static ArrayList<BibliotecarioClass> bibliotecariosArray = new ArrayList<>();
+    public static ArrayList<BibliotecarioClass> bibliotecarios = new ArrayList<>();
 
     private BibliotecarioClass(){
         this.nombre = "";
