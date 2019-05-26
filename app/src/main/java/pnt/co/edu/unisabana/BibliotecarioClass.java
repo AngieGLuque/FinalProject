@@ -6,9 +6,9 @@ public class BibliotecarioClass {
     private final String nombre;
     private final String apellido;
     private final String dependencia;
+    private final int id;
     private final String email;
     private final String contrasena;
-    //Falta ID
 
     private static BibliotecarioClass bibliotecario;
     public static ArrayList<BibliotecarioClass> bibliotecarios = new ArrayList<>();
@@ -17,14 +17,16 @@ public class BibliotecarioClass {
         this.nombre = "";
         this.apellido = "";
         this.dependencia = "";
+        this.id = 0;
         this.email = "";
         this.contrasena = "";
     }
 
-    BibliotecarioClass(String nombre, String apellido, String dependencia, String email, String contrasena){
+    BibliotecarioClass(String nombre, String apellido, String dependencia,int id, String email, String contrasena){
         this.nombre = nombre;
         this.apellido = apellido;
         this.dependencia = dependencia;
+        this.id = id;
         this.email = email;
         this.contrasena = contrasena;
     }
@@ -40,6 +42,8 @@ public class BibliotecarioClass {
     public String getDependencia() {
         return dependencia;
     }
+
+    public int getId(){ return id;}
 
     public String getEmail() {
         return email;
