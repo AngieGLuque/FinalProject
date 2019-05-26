@@ -13,4 +13,5 @@
     <string name="contrase_a">Contraseña</string>
     <string name="estudiante">Estudiante</string>
     <string name="bibliotecario">Bibliotecario</string>
+    <string name="cancel">cancel</string>
 </resources>
