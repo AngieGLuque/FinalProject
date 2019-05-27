@@ -26,25 +26,6 @@
         app:layout_constraintVertical_bias="0.223"
         app:srcCompat="@drawable/estidanteicono" />
 
-    <ImageButton
-        android:id="@+id/addBibliotecario"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/sinfondo"
-        android:contentDescription="@string/addbibliotecario"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addEstudiante"
-        app:srcCompat="@drawable/bibliotecario" />
-
     <TextView
         android:id="@+id/agregarEstudiante"
         android:layout_width="wrap_content"
@@ -79,5 +60,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addBibliotecario"
-        app:layout_constraintVertical_bias="0.068" />
+        app:layout_constraintVertical_bias="0.205" />
+
+    <ImageButton
+        android:id="@+id/addBibliotecario"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/sinfondo"
+        android:contentDescription="@string/addbibliotecario"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/agregarEstudiante"
+        app:layout_constraintVertical_bias="0.541"
+        app:srcCompat="@drawable/bibliotecario" />
 </android.support.constraint.ConstraintLayout>
