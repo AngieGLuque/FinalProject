@@ -36,7 +36,7 @@ public class AddUserBibliotecarioActivity extends AppCompatActivity {
         final EditText direccion = findViewById(R.id.direccion);
         final EditText telefono = findViewById(R.id.telefono);
         final EditText contrasena = findViewById(R.id.password2);
-        
+
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,6 +44,7 @@ public class AddUserBibliotecarioActivity extends AppCompatActivity {
                 startActivity(cancel);
             }
         });
+
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
