@@ -38,4 +38,5 @@
     <string name="registrar_prestamo">Registrar Prestamo</string>
     <string name="renovar_prestamo">Renovar Prestamo</string>
     <string name="carrera">Carrera</string>
+    <string name="fecha_de_prestamo">Fecha de prestamo</string>
 </resources>
