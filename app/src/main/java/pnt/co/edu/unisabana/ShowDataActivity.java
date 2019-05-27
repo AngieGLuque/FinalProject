@@ -63,9 +63,13 @@ public class ShowDataActivity extends AppCompatActivity {
                 if(user.getText().equals("Bibliotecario")){
                     Intent cancel = new Intent(ShowDataActivity.this,LoginActivity.class);
                     startActivity(cancel);
+                    Intent check = new Intent(ShowDataActivity.this, FuncionesBibliotecarioActivity.class);
+                    startActivity(check);
                 }else{
                     Intent cancel = new Intent(ShowDataActivity.this,LoginActivity.class);
                     startActivity(cancel);
+                    Intent check = new Intent(ShowDataActivity.this, FuncionesEstudianteActivity.class);
+                    startActivity(check);
                 }
 
             }
