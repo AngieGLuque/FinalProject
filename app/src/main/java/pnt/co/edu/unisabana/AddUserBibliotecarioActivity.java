@@ -46,7 +46,7 @@ public class AddUserBibliotecarioActivity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Call<ResponseBody> call =  service.registroEst(nombre.getText().toString(), apellido.getText().toString(), id.getText().toString(), email.getText().toString(), telefono.getText().toString(),direccion.getText().toString(),contrasena.getText().toString());
+                Call<ResponseBody> call =  service.registroBib(nombre.getText().toString(), apellido.getText().toString(), id.getText().toString(), email.getText().toString(), telefono.getText().toString(),direccion.getText().toString(),contrasena.getText().toString());
                 if (!nombre.getText().toString().isEmpty() && !apellido.getText().toString().isEmpty() && !id.getText().toString().isEmpty() && !email.getText().toString().isEmpty() && !direccion.getText().toString().isEmpty()&& !telefono.getText().toString().isEmpty() && !contrasena.getText().toString().isEmpty()) {
                     call.enqueue(new Callback<ResponseBody>() {
                         @Override
