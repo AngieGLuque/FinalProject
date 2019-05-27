@@ -34,7 +34,18 @@ public class ShowDataActivity extends AppCompatActivity {
         final TextView correo = findViewById(R.id.textCorreo);
         final TextView textOne = findViewById(R.id.textOne);
         final TextView textTwo = findViewById(R.id.textTwo);
-
+        String[] data = getIntent().getCharSequenceExtra("data").toString().split(",");
+        if(data[5].isEmpty()){
+            user.setText("Estudiante");
+            textOne.setText("Carrera: "+data[4]);
+        }else{
+            textOne.setText("Telefono: "+ data[4]);
+            textTwo.setText("Direccion"+data[5]);
+        }
+        nombre.setText("Nombre: "+data[0]);
+        apellidos.setText("Apellidos: "+data[1]);
+        correo.setText("Correo: "+ data[3]);
+        id.setText("ID: "+data[2]);
 
     }
 }

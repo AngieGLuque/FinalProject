@@ -34,8 +34,8 @@ public class LoginActivity extends AppCompatActivity {
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent open = new Intent(LoginActivity.this,MainActivity.class);
-                startActivity(open);
+                Intent cancel = new Intent(LoginActivity.this,MainActivity.class);
+                startActivity(cancel);
             }
         });
 
@@ -43,12 +43,15 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Call<ResponseBody> call = service.datos(loginEmail.getText().toString());
-                if((loginEmail.getText().toString().isEmpty() && loginPassword.getText().toString().isEmpty())){
+                if(!(loginEmail.getText().toString().isEmpty() && loginPassword.getText().toString().isEmpty())){
                 call.enqueue(new Callback<ResponseBody>() {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                         try {
                             Toast.makeText(LoginActivity.this, response.body().string(),Toast.LENGTH_LONG).show();
+                            Intent login = new Intent(LoginActivity.this,ShowDataActivity.class);
+                            login.putExtra("data", response.body().string());
+                            startActivity(login);
                         } catch (IOException e) {
                             e.printStackTrace();
                         }

@@ -34,8 +34,6 @@ public class AddUserActivity extends AppCompatActivity {
         final EditText carrera = findViewById(R.id.carrera);
         final EditText contrasena = findViewById(R.id.password);
 
-        //TODO: Combrobar que se entren todos los datos
-
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
