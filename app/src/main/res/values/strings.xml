@@ -37,4 +37,5 @@
     <string name="actualizar_datos_estudiante">Actualizar Datos Estudiante</string>
     <string name="registrar_prestamo">Registrar Prestamo</string>
     <string name="renovar_prestamo">Renovar Prestamo</string>
+    <string name="carrera">Carrera</string>
 </resources>
