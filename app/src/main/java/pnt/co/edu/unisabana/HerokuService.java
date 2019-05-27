@@ -25,4 +25,7 @@ public interface HerokuService {
                                   @Field("contraseña") String contraseña,@Field("telefono") String telefono,
                                   @Field("direccion") String direccion);
 
+    @FormUrlEncoded
+    @GET("datos")
+    Call<ResponseBody>datos(String email);
 }
