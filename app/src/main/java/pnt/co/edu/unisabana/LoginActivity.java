@@ -27,6 +27,7 @@ public class LoginActivity extends AppCompatActivity {
 
         final EditText loginEmail = findViewById(R.id.correoLogin);
         final EditText loginPassword = findViewById(R.id.passwordLogin);
+
         Retrofit retrofit = new Retrofit.Builder().baseUrl("https://afternoon-mesa-69524.herokuapp.com/").build();
         final HerokuService service = retrofit.create(HerokuService.class);
 
@@ -37,10 +38,12 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(open);
             }
         });
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Call<ResponseBody> call = service.datos(loginEmail.getText().toString());
+                if((loginEmail.getText().toString().isEmpty() && loginPassword.getText().toString().isEmpty())){
                 call.enqueue(new Callback<ResponseBody>() {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
@@ -55,6 +58,9 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this, "Ha ocurrido un error, intente de nuevo", Toast.LENGTH_SHORT).show();
                     }
                 });
+            }else{
+                    Toast.makeText(LoginActivity.this, "Ingrese todos los datos para entrar.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

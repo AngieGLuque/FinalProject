@@ -33,35 +33,41 @@ public class AddUserActivity extends AppCompatActivity {
         final EditText email = findViewById(R.id.correo);
         final EditText carrera = findViewById(R.id.carrera);
         final EditText contrasena = findViewById(R.id.password);
+
         //TODO: Combrobar que se entren todos los datos
 
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent cancel = new Intent(AddUserActivity.this,MainActivity.class);
+                Intent cancel = new Intent(AddUserActivity.this, MainActivity.class);
                 startActivity(cancel);
             }
         });
+            register.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Call<ResponseBody> call = service.registroEst(nombre.getText().toString(), apellido.getText().toString(), id.getText().toString(), email.getText().toString(), carrera.getText().toString(), contrasena.getText().toString());
+                    if (!(nombre.getText().toString().isEmpty() && apellido.getText().toString().isEmpty() && id.getText().toString().isEmpty() && email.getText().toString().isEmpty() && carrera.getText().toString().isEmpty() && contrasena.getText().toString().isEmpty())) {
+                        call.enqueue(new Callback<ResponseBody>() {
+                            @Override
+                            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                                try {
+                                    Toast.makeText(AddUserActivity.this, response.body().string(), Toast.LENGTH_LONG).show();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            }
 
-        register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Call<ResponseBody> call = service.registroEst(nombre.getText().toString(),apellido.getText().toString(),id.getText().toString(),email.getText().toString(),carrera.getText().toString(),contrasena.getText().toString());
-                call.enqueue(new Callback<ResponseBody>() {
-                    @Override
-                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                        try {
-                            Toast.makeText(AddUserActivity.this, response.body().string(),Toast.LENGTH_LONG).show();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
+                            @Override
+                            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                                Toast.makeText(AddUserActivity.this, "Ha ocurrido un error, intente de nuevo.", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }else{
+                        Toast.makeText(AddUserActivity.this, "Complete todos los campos para registrar el usuario.", Toast.LENGTH_SHORT).show();
+
                     }
-                    @Override
-                    public void onFailure(Call<ResponseBody> call, Throwable t) {
-                        Toast.makeText(AddUserActivity.this, "Ha ocurrido un error, intente de nuevo", Toast.LENGTH_SHORT).show();
-                    }
-                });
-            }
-        });
+                }
+            });
+        }
     }
-}
