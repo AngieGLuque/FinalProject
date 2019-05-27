@@ -47,8 +47,8 @@ public class ShowDataActivity extends AppCompatActivity {
             textOne.setText("Carrera: "+dataArray[4]);
         }else{
             user.setText("Bibliotecario");
-            textOne.setText("Telefono: "+dataArray[5]);
-            textTwo.setText("Direccion"+dataArray[6]);
+            textOne.setText("Telefono: "+dataArray[4]);
+            textTwo.setText("Direccion"+dataArray[5]);
         }
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override

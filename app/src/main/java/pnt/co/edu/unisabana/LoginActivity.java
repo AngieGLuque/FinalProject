@@ -47,13 +47,19 @@ public class LoginActivity extends AppCompatActivity {
                 call.enqueue(new Callback<ResponseBody>() {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                        String data = null;
                         try {
-                            Toast.makeText(LoginActivity.this, response.body().string(),Toast.LENGTH_LONG).show();
-                            Intent login = new Intent(LoginActivity.this,ShowDataActivity.class);
-                            login.putExtra("data", response.body().string());
-                            startActivity(login);
+                            data = response.body().string();
                         } catch (IOException e) {
                             e.printStackTrace();
+                        }
+                        if(data != ""){
+                            Intent login = new Intent(LoginActivity.this,ShowDataActivity.class);
+                            login.putExtra("data",data);
+                            startActivity(login);
+                        }else{
+                            Toast.makeText(LoginActivity.this, "Ha ocurrido un error, intente de nuevo", Toast.LENGTH_SHORT).show();
+
                         }
                     }
                     @Override
