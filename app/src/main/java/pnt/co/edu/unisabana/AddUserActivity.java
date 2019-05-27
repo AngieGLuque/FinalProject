@@ -50,7 +50,7 @@ public class AddUserActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                         try {
-                            Toast.makeText(AddUserActivity.this, response.body().string(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(AddUserActivity.this, response.body().string(),Toast.LENGTH_SHORT);
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
