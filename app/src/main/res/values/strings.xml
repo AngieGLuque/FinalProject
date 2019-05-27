@@ -26,4 +26,6 @@
     <string name="palabras_clave">Palabras clave</string>
     <string name="registrarse_como_estudiante">Registrarse como estudiante</string>
     <string name="registrarse_como_bibliotecario">Registrarse como bibliotecario</string>
+    <string name="addestudiante">addEstudiante</string>
+    <string name="addbibliotecario">addBibliotecario</string>
 </resources>
