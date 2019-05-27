@@ -41,10 +41,10 @@ public class AddUserActivity extends AppCompatActivity {
                 startActivity(cancel);
             }
         });
-            register.setOnClickListener(new View.OnClickListener() {
+        register.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Call<ResponseBody> call = service.registroEst(nombre.getText().toString(), nombre.getText().toString(), apellido.getText().toString(), id.getText().toString(), email.getText().toString(), carrera.getText().toString(), contrasena.getText().toString());
+                    Call<ResponseBody> call = service.registroEst(nombre.getText().toString(), apellido.getText().toString(), id.getText().toString(), email.getText().toString(), carrera.getText().toString(), contrasena.getText().toString());
                     if (!nombre.getText().toString().isEmpty() && !apellido.getText().toString().isEmpty() && !id.getText().toString().isEmpty() && !email.getText().toString().isEmpty() && !carrera.getText().toString().isEmpty() && !contrasena.getText().toString().isEmpty()) {
                         call.enqueue(new Callback<ResponseBody>() {
                             @Override
@@ -63,7 +63,6 @@ public class AddUserActivity extends AppCompatActivity {
                         });
                     }else{
                         Toast.makeText(AddUserActivity.this, "Complete todos los campos para registrar el usuario.", Toast.LENGTH_SHORT).show();
-
                     }
                 }
             });

@@ -23,6 +23,7 @@ public class ShowDataActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_data);
         ImageButton cancel = findViewById(R.id.redx);
+        ImageButton check = findViewById(R.id.check);
 
         Retrofit retrofit = new Retrofit.Builder().baseUrl("https://afternoon-mesa-69524.herokuapp.com/").build();
         final HerokuService service = retrofit.create(HerokuService.class);
@@ -54,6 +55,19 @@ public class ShowDataActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent cancel = new Intent(ShowDataActivity.this,LoginActivity.class);
                 startActivity(cancel);
+            }
+        });
+        check.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(user.getText().equals("Bibliotecario")){
+                    Intent cancel = new Intent(ShowDataActivity.this,LoginActivity.class);
+                    startActivity(cancel);
+                }else{
+                    Intent cancel = new Intent(ShowDataActivity.this,LoginActivity.class);
+                    startActivity(cancel);
+                }
+
             }
         });
     }

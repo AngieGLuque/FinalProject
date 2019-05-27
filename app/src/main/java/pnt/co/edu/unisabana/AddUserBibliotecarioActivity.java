@@ -28,7 +28,8 @@ public class AddUserBibliotecarioActivity extends AppCompatActivity {
         final HerokuService service = retrofit.create(HerokuService.class);
 
         ImageButton cancel = findViewById(R.id.redx2);
-        ImageButton register = findViewById(R.id.check);
+        ImageButton register = findViewById(R.id.check2);
+
         final EditText nombre = findViewById(R.id.nombre2);
         final EditText apellido = findViewById(R.id.apellido2);
         final EditText id = findViewById(R.id.identificacion2);
@@ -48,7 +49,7 @@ public class AddUserBibliotecarioActivity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Call<ResponseBody> call = service.registroEst( nombre.getText().toString(), apellido.getText().toString(), id.getText().toString(), email.getText().toString(), contrasena.getText().toString(), telefono.getText().toString(), direccion.getText().toString());
+                Call<ResponseBody> call = service.registroBib(nombre.getText().toString(), apellido.getText().toString(), id.getText().toString(), email.getText().toString(), contrasena.getText().toString(), telefono.getText().toString(), direccion.getText().toString());
                 if (!nombre.getText().toString().isEmpty() && !apellido.getText().toString().isEmpty() && !id.getText().toString().isEmpty() && !email.getText().toString().isEmpty()  && !contrasena.getText().toString().isEmpty() && !telefono.getText().toString().isEmpty() && !direccion.getText().toString().isEmpty()) {
                     call.enqueue(new Callback<ResponseBody>() {
                         @Override
@@ -59,7 +60,6 @@ public class AddUserBibliotecarioActivity extends AppCompatActivity {
                                 e.printStackTrace();
                             }
                         }
-
                         @Override
                         public void onFailure(Call<ResponseBody> call, Throwable t) {
                             Toast.makeText(AddUserBibliotecarioActivity.this, "Ha ocurrido un error, intente de nuevo.", Toast.LENGTH_SHORT).show();

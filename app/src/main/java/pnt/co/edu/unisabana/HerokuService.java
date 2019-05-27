@@ -10,7 +10,7 @@ public interface HerokuService {
 
     @FormUrlEncoded
     @POST("registroEst")
-    Call<ResponseBody>registroEst(String s, @Field("nombre") String nombre, @Field("apellido") String apellido, @Field("id") String id, @Field("email") String email, @Field("carrera") String carrera, @Field("contrasena") String contrasena);
+    Call<ResponseBody>registroEst(@Field("nombre") String nombre, @Field("apellido") String apellido, @Field("id") String id, @Field("email") String email, @Field("carrera") String carrera, @Field("contrasena") String contrasena);
 
     @FormUrlEncoded
     @POST("registroBib")
