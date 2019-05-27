@@ -41,7 +41,9 @@ public class AddUserActivity extends AppCompatActivity {
         final EditText email = findViewById(R.id.correo);
         final EditText carrera = findViewById(R.id.carrera);
         final EditText contraseña = findViewById(R.id.password);
-
+        if(carreraDependencia.isChecked()){
+            nombre.setActivated(false);
+        }
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,7 +54,12 @@ public class AddUserActivity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Call<ResponseBody> call  = service.registro(nombre.getText().toString(),apellido.getText().toString(),id.getText().toString(),email.getText().toString(),carrera.getText().toString(),contraseña.getText().toString(),carreraDependencia.isChecked());
+                Call<ResponseBody> call = service.voidService();
+                if(carreraDependencia.isChecked()){
+                    //call = service.registroBib(nombre.getText().toString(),apellido.getText().toString(),id.getText().toString(),email.getText().toString(),contraseña.getText().toString());
+                }else{
+                    call = service.registroEst(nombre.getText().toString(),apellido.getText().toString(),id.getText().toString(),email.getText().toString(),carrera.getText().toString(),contraseña.getText().toString());
+                }
                 call.enqueue(new Callback<ResponseBody>() {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
