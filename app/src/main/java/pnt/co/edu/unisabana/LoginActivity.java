@@ -42,8 +42,8 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Call<ResponseBody> call = service.datos(loginEmail.getText().toString());
-                if(!(loginEmail.getText().toString().isEmpty() && loginPassword.getText().toString().isEmpty())){
+                Call<ResponseBody> call = service.login(loginEmail.getText().toString(),loginPassword.getText().toString());
+                if(!loginEmail.getText().toString().isEmpty() && !loginPassword.getText().toString().isEmpty()){
                 call.enqueue(new Callback<ResponseBody>() {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {

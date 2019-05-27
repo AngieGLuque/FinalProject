@@ -19,6 +19,6 @@ public interface HerokuService {
     Call<ResponseBody>registroBib(@Field("nombre")String nombre,@Field("apellido")String apellido, @Field("id")String id,@Field("email")String email,@Field("contrasena") String contrasena,@Field("telefono") String telefono,@Field("direccion") String direccion);
 
     @FormUrlEncoded
-    @POST("datos")
-    Call<ResponseBody>datos(@Field("email") String email);
+    @POST("login")
+    Call<ResponseBody>login(@Field("email") String email,@Field("contrasena") String contrasena);
 }

@@ -45,7 +45,7 @@ public class AddUserActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Call<ResponseBody> call = service.registroEst(nombre.getText().toString(), apellido.getText().toString(), id.getText().toString(), email.getText().toString(), carrera.getText().toString(), contrasena.getText().toString());
-                    if (!(nombre.getText().toString().isEmpty() && apellido.getText().toString().isEmpty() && id.getText().toString().isEmpty() && email.getText().toString().isEmpty() && carrera.getText().toString().isEmpty() && contrasena.getText().toString().isEmpty())) {
+                    if (!nombre.getText().toString().isEmpty() && !apellido.getText().toString().isEmpty() && !id.getText().toString().isEmpty() && !email.getText().toString().isEmpty() && !carrera.getText().toString().isEmpty() && !contrasena.getText().toString().isEmpty()) {
                         call.enqueue(new Callback<ResponseBody>() {
                             @Override
                             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
