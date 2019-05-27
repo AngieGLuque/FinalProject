@@ -28,4 +28,13 @@
     <string name="registrarse_como_bibliotecario">Registrarse como bibliotecario</string>
     <string name="addestudiante">addEstudiante</string>
     <string name="addbibliotecario">addBibliotecario</string>
+    <string name="registrar_libro">Registrar Libro</string>
+    <string name="consultar_libros">Consultar Libros</string>
+    <string name="actualizar_libro">Actualizar libro</string>
+    <string name="eliminar_libro">Eliminar libro</string>
+    <string name="registrar">Registrar</string>
+    <string name="listar_datos">Listar Datos</string>
+    <string name="actualizar_datos_estudiante">Actualizar Datos Estudiante</string>
+    <string name="registrar_prestamo">Registrar Prestamo</string>
+    <string name="renovar_prestamo">Renovar Prestamo</string>
 </resources>
