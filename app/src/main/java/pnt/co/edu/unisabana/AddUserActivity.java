@@ -8,7 +8,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Switch;
+import android.widget.Toast;
 
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 
 public class AddUserActivity extends AppCompatActivity {
@@ -47,7 +52,17 @@ public class AddUserActivity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Call<ResponseBody> call  = service
+                Call<ResponseBody> call  = service.registro(nombre.getText().toString(),apellido.getText().toString(),id.getText().toString(),email.getText().toString(),carrera.getText().toString(),contraseña.getText().toString(),carreraDependencia.isChecked());
+                call.enqueue(new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                        Toast.makeText(AddUserActivity.this, (CharSequence) response.body(), Toast.LENGTH_SHORT).show();
+                    }
+                    @Override
+                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+                        Toast.makeText(AddUserActivity.this, "Ha ocurrido un error, intente de nuevo", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
     }

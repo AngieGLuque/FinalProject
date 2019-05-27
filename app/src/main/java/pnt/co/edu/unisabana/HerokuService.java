@@ -11,6 +11,8 @@ import retrofit2.http.Path;
 public interface HerokuService {
 
     @FormUrlEncoded
-    @POST("registro")
-    Call<ResponseBody>registro(@Field("nombre")String nombre,);
+    @POST("registroEst")
+    Call<ResponseBody>registroEst(@Field("nombre")String nombre,@Field("apellido")String apellido,
+                               @Field("id")String id,@Field("email")String email,
+                               @Field("carrera")String carrera,@Field("contraseña") String contraseña);
 }
