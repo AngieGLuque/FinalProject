@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         user_Create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent open = new Intent(MainActivity.this,AddUserActivity.class);
+                Intent open = new Intent(MainActivity.this,UserSelectActivity.class);
                 startActivity(open);
             }
         });
