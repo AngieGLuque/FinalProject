@@ -9,7 +9,6 @@ import android.widget.ImageButton;
 
 public class LoginActivity extends AppCompatActivity {
 
-    public static String sessionEmail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,7 +17,7 @@ public class LoginActivity extends AppCompatActivity {
         ImageButton login = findViewById(R.id.check);
 
         final EditText loginEmail = findViewById(R.id.correoLogin);
-        EditText loginPassword = findViewById(R.id.passwordLogin);
+        final EditText loginPassword = findViewById(R.id.passwordLogin);
 
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent login = new Intent(LoginActivity.this,ShowDataActivity.class);
-                LoginActivity.sessionEmail = loginEmail.getText().toString();
+                login.putExtra("email", loginEmail.getText().toString());
                 startActivity(login);
             }
         });

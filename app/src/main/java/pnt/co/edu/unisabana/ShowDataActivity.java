@@ -8,6 +8,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOException;
+
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -33,11 +35,15 @@ public class ShowDataActivity extends AppCompatActivity {
         final TextView textOne = findViewById(R.id.textOne);
         final TextView textTwo = findViewById(R.id.textTwo);
 
-        Call<ResponseBody> call = service.datos(LoginActivity.sessionEmail);
+        Call<ResponseBody> call = service.datos(getIntent().getStringExtra("email"));
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                user.setText((CharSequence) response.body());
+                try {
+                    user.setText(response.body().string());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
 
             @Override
