@@ -23,4 +23,8 @@ public interface HerokuService {
     @FormUrlEncoded
     @POST("registroLib")
     Call<ResponseBody>registroLib(@Field("titulo") String titulo, @Field("autor") String autor, @Field ("resumen") String resumen, @Field ("unidades") int unidades, @Field("issn") String issn, @Field("keyword") String keywords);
+
+    @FormUrlEncoded
+    @POST("registroPres")
+    Call<ResponseBody> registroPres(@Field ("issnPrestamo") String issnPrestamo, @Field ("fechaPrestamo") String fechaPrestamo, @Field ("idPrestamo") int idPrestamo);
 }
