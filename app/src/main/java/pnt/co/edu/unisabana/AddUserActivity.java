@@ -33,6 +33,7 @@ public class AddUserActivity extends AppCompatActivity {
         final EditText email = findViewById(R.id.correo);
         final EditText carrera = findViewById(R.id.carrera);
         final EditText contrasena = findViewById(R.id.password);
+        //TODO: Combrobar que se entren todos los datos
 
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +51,7 @@ public class AddUserActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                         try {
-                            Toast.makeText(AddUserActivity.this, response.body().string(),Toast.LENGTH_SHORT);
+                            Toast.makeText(AddUserActivity.this, response.body().string(),Toast.LENGTH_LONG).show();
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
