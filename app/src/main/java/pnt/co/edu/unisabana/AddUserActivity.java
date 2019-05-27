@@ -1,14 +1,14 @@
 package pnt.co.edu.unisabana;
 
 import android.content.Intent;
-import android.provider.ContactsContract;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.Switch;
 import android.widget.Toast;
+
+import java.io.IOException;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -49,7 +49,11 @@ public class AddUserActivity extends AppCompatActivity {
                 call.enqueue(new Callback<ResponseBody>() {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                        Toast.makeText(AddUserActivity.this, (CharSequence) response.body(), Toast.LENGTH_SHORT).show();
+                        try {
+                            Toast.makeText(AddUserActivity.this, response.body().string(), Toast.LENGTH_SHORT).show();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
                     @Override
                     public void onFailure(Call<ResponseBody> call, Throwable t) {
