@@ -12,8 +12,8 @@ public class UserSelectActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_select);
-        ImageButton user_Estudiante = (ImageButton) findViewById(R.id.addEstudiante);
-        ImageButton user_Bibliotecario = (ImageButton) findViewById(R.id.addBibliotecario);
+        ImageButton user_Estudiante =  findViewById(R.id.addEstudiante);
+        ImageButton user_Bibliotecario = findViewById(R.id.addBibliotecario);
         user_Estudiante.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
