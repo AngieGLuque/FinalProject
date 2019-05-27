@@ -35,28 +35,6 @@ public class ShowDataActivity extends AppCompatActivity {
         final TextView textOne = findViewById(R.id.textOne);
         final TextView textTwo = findViewById(R.id.textTwo);
 
-        Call<ResponseBody> call = service.datos(getIntent().getStringExtra("email"));
-        call.enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                try {
-                    user.setText(response.body().string());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
 
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Toast.makeText(ShowDataActivity.this,"Algo salio mal, intentalo de nuevo", Toast.LENGTH_SHORT).show();
-            }
-        });
-        cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent open = new Intent(ShowDataActivity.this,MainActivity.class);
-                startActivity(open);
-            }
-        });
     }
 }
