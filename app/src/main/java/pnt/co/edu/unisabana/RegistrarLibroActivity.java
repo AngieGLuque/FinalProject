@@ -48,7 +48,7 @@ public class RegistrarLibroActivity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Call<ResponseBody> call = service.registroBib(titulo.getText().toString(), autor.getText().toString(), resumen.getText().toString(), unidades.getText().toString(), issn.getText().toString(), palabras.getText().toString());
+                Call<ResponseBody> call = service.registroLib(titulo.getText().toString(), autor.getText().toString(), resumen.getText().toString(), Integer.parseInt(unidades.getText().toString()), issn.getText().toString(), palabras.getText().toString());
                 if (!titulo.getText().toString().isEmpty() && !autor.getText().toString().isEmpty() && !resumen.getText().toString().isEmpty() && !unidades.getText().toString().isEmpty()  && !issn.getText().toString().isEmpty() && !palabras.getText().toString().isEmpty()) {
                     call.enqueue(new Callback<ResponseBody>() {
                         @Override
